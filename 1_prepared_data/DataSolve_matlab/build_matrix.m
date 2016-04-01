@@ -9,4 +9,5 @@ function[matrix,row_id,col_id]=build_matrix(filename,pathname)
         y = find(col_id==temp(i,2));
         matrix(x,y)=1;
     end
+    disp([filename '  finished']);
 end

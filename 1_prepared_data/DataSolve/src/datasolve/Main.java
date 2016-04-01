@@ -28,7 +28,7 @@ public class Main {
 		//String result9 = "data\\result\\human_gp_old_2016_2_22.txt";
 		//String result10 = "data\\result\\human_gene_go_2016_2_22.txt";
 		//String result11 = "data\\result\\human_omim_ncbi_2016_2_22.txt";
-		//String result12 = "data\\result\\human_mus_ncbi.txt";
+		//String result12 = "data\\result\\mus_human_ncbi_2016_2_23.txt";
 		//String result13 = "data\\result\\human_omim_omim_2016_2_24.txt";
  		//FileOperator.WriteFile(FileOperator.ReadFile(filename1, 'M', new String[]{"\t", ":"}, new int[]{1, 4}), result1);
  		//FileOperator.WriteFile(FileOperator.ReadFile(filename2, 'U', new String[]{"\t", ":"}, new int[]{2, 4}), result2);
@@ -73,6 +73,26 @@ public class Main {
 		//FileOperator.WriteFile(DataSolve.MapToString(DataSolve.Merge(a1, a2)), result);
 		/*
 		 * human omim2ncbi merger
+		 */
+		
+		/*
+		 * pathway file format
+		 */
+		//String filename1 = "data\\source\\pathway_mmu_mgi_sec.txt";
+		//String filename2 = "data\\source\\pathway_mmu_ncbi_sec.txt";
+		//String result1 = "data\\result\\pathway_mmu_mgi_sec_2015_2_24.txt";
+		//String result2 = "data\\result\\pathway_mmu_ncbi_sec_2015_2_24.txt";
+		//FileOperator.WriteFile(DataSolve.Foramt(FileOperator.ReadTuple(filename1, ",")), result1);
+		//FileOperator.WriteFile(DataSolve.Foramt(FileOperator.ReadTuple(filename2, ",")), result2);
+		
+		//String filename3 = "data\\source\\pathway_hsa_omim_sec.txt";
+		//String filename4 = "data\\source\\pathway_hsa_ncbi_sec.txt";
+		//String result3 = "data\\result\\pathway_hsa_omim_sec_2015_2_24.txt";
+		//String result4 = "data\\result\\pathway_hsa_ncbi_sec_2015_2_24.txt";
+		//FileOperator.WriteFile(DataSolve.Foramt(FileOperator.ReadTuple(filename3, ",")), result3);
+		//FileOperator.WriteFile(DataSolve.Foramt(FileOperator.ReadTuple(filename4, ",")), result4);
+		/*
+		 * pathway file format
 		 */
 	}
 }

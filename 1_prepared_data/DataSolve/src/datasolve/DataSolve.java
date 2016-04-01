@@ -29,5 +29,29 @@ public class DataSolve {
 			outlines.add(tuple.toString());
 		}
 		return outlines;
-	}	
+	}
+	public static ArrayList<String> Foramt(ArrayList<String> ori){
+		ArrayList<String> out = new ArrayList<String>();
+		int maxrecord = 0;
+		String[] blocks;
+		int[] zerosnumber = new int[ori.size()];
+ 		for(int i = 0; i < ori.size(); ++i){
+ 			blocks = ori.get(i).trim().split(" ");
+ 			zerosnumber[i] = blocks.length;
+			maxrecord = Math.max(maxrecord, blocks.length);
+			//System.out.println((i+1) + " : " +blocks.length + " / " + maxrecord);
+		}
+ 		for(int i = 0; i < ori.size(); ++i){
+ 			out.add(ori.get(i)+ DataSolve.ZeroBuilder(maxrecord - zerosnumber[i]));
+ 		}
+ 		System.out.println("format full success!");
+ 		return out;
+	}
+	public static String ZeroBuilder(int num){
+		String zeros = "";
+		for(int i = 0; i < num; ++i){
+			zeros += " 0";
+		}
+		return zeros;
+	}
 }

@@ -1,0 +1,11 @@
+function [G_G_Sim] = Hierarchy_Meta_Path(Association_Fisrt , Association_Sec , weight)
+
+%weight is a vector.
+
+G_G_Sim = Association_Fisrt * diag(weight) *  Association_Sec;
+for i = 1:size(G_G_Sim,1)
+    for j = 1:szie
+G_G_Sim = 
+
+end
+

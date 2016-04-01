@@ -184,4 +184,19 @@ public class FileOperator {
 		System.out.println("read hom success!");
 		return buff;
 	}
+	public static ArrayList<String> ReadTuple(String filename, String sign){
+		ArrayList<String> rece = new ArrayList<String>();
+		try{
+			BufferedReader reader = new BufferedReader(new FileReader(filename));
+			String readingline = null;
+			while((readingline = reader.readLine()) != null){
+				rece.add(readingline.trim().replace(sign, " "));
+			}
+			reader.close();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return rece;
+	}
 }
+

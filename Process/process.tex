@@ -1,0 +1,66 @@
+\documentclass{ctexart}
+\usepackage{CJK}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{mathrsfs}
+\usepackage{ulem}
+\usepackage{float}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{amssymb}
+%\usepackage{amsmath}
+\begin{document}
+\setlength{\parindent}{0pt}
+\begin{CJK}{GBK}{song}
+\section*{Hierarchy Meta Path(Gene-Goterm-Gene)}
+\subsection*{1. Data preparing}
+Matrix\ :\\\ mmu\_mp\_mgi\\
+mmu\_mgi\_go\\
+hierarchy\_go\\\\
+Index:\\mmu\_mp\_mgi\_row , mmu\_mp\_mgi\_col\\
+mmu\_mgi\_go\_row , mmu\_mgi\_go\_col\\
+go\\
+\subsection*{2. Algorithm achievement}
+1.Function\ \textbf{Row\_Index\_Alignment}\\
+\ [Output\_Association\_First , Output\_Association\_Sec , Output\_Row\_Index] = \textbf{Row\_Index\_Alignment}\\
+(Input\_Association\_First , Input\_Association\_Sec , Row\_Index\_First , Row\_Index\_Sec)\\\\
+2.Function\ \textbf{Kernel\_Weight}\\
+\ [Output\_Weight] = \textbf{Kernel\_Weight}(Input\_Weight)\\\\
+3.Function\ \textbf{Hierarchy\_Meta\_Path}\\
+\ [G\_G\_Sim] = \textbf{Hierarchy\_Meta\_Path}(Input\_Association\_First , Input\_Association\_Sec ,weight)\\\\
+
+Flow process:\\
+1.Using Function \textbf{Row\_Index\_Alignment}() to process \\
+:\ mmu\_mp\_mgi and mmu\_mgi\_go , mmu\_mgi\_go and hierarchy\_go,
+get the \ mmu\_mp\_mgi\_aligned , mmu\_mgi\_go\_aligned , hierarchy\_go\_aligned.\\
+2.Using Function \textbf{Kernel\_Weight}(hierarchy\_go\_aligned) to get the Weight.\\
+3.Using Function \textbf{Hierarchy\_Meta\_Path}() to get the G\_G\_Sim.\\
+\subsection*{3. Evaluation}
+1.Function\ \textbf{Divide}\\
+\ [train,test] = Divide(begin , end , mmu\_mp\_mgi)\\
+2.Function\ \textbf{Recommended}\\
+\ [Result] =  \textbf{Recommended}(G\_G\_Sim , train)\\\\
+3.Function\ \textbf{AUC}\\
+\ [AUC] = \textbf{AUC}(Result , test)\\\\
+4.Function\ \textbf{MAP}\\
+\ [MAP] = \textbf{MAP}(Result , test)\\\\
+5.Function\ \textbf{NDCG}\\
+\ [NDCG] = \textbf{NDCG}(Result , test)\\\\
+
+
+Flow process:\\
+1.Using Divide() and Recommended() get Result.\\
+2.Using evaluation function to evaluate the result.
+
+\begin{equation*}
+a=\frac{2}{1}
+\end{equation*}
+
+\end{CJK}
+\end{document}
